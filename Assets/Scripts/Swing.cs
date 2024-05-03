@@ -6,6 +6,7 @@ public class Swing : MonoBehaviour
     [SerializeField] private float _forceSpeed;
 
     private Rigidbody _rigidbody;
+    private KeyCode _keyCodeA = KeyCode.A;
 
     private void Awake()
     {
@@ -14,7 +15,7 @@ public class Swing : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(_keyCodeA))
         {
             _rigidbody.AddForce(Vector3.back * _forceSpeed);
         }

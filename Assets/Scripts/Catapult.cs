@@ -11,6 +11,9 @@ public class Catapult : MonoBehaviour
 
     private Rigidbody _rigidbody;
 
+    private KeyCode _keyCodeD = KeyCode.D;
+    private KeyCode _keyCodeS = KeyCode.S;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -18,12 +21,12 @@ public class Catapult : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(_keyCodeD)
         {
             _rigidbody.AddForceAtPosition(Vector3.up * _forceSpeed, _gunTransform.position, ForceMode.Acceleration);
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(_keyCodeS))
         {
             Instantiate(_projectile, _projectilePosition.position, Quaternion.identity);
         }
